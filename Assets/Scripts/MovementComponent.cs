@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class MovementComponent : MonoBehaviour
@@ -8,6 +9,10 @@ public class MovementComponent : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpCount;
+    [SerializeField] private float currentJumpCount;
+
+    public UnityEvent onCollided;
 
 
     private Rigidbody2D rb;
@@ -29,9 +34,11 @@ public class MovementComponent : MonoBehaviour
     }
     private void Jump()
     {
-        if(Input.GetButtonDown("Vertical")) 
+        if(Input.GetButtonDown("Vertical") && currentJumpCount>0) 
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            currentJumpCount--;
+            currentJumpCount = Mathf.Clamp(currentJumpCount, 0, jumpCount);
         }
     
     }
@@ -43,7 +50,10 @@ public class MovementComponent : MonoBehaviour
             rb.velocity = new Vector3(clampedHorizontalSpeed.x,rb.velocity.y);
         }
     }
-
+    public void ResetJumpCount()
+    {
+        currentJumpCount = jumpCount;
+    }
 
     // Update is called once per frame
     void Update()
