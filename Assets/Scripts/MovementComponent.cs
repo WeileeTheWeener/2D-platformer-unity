@@ -13,8 +13,6 @@ public class MovementComponent : MonoBehaviour
     [SerializeField] private float currentJumpCount;
 
     public UnityEvent onCollided;
-
-
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -30,7 +28,7 @@ public class MovementComponent : MonoBehaviour
     }
     private void Move()
     {
-        rb.AddForce(GetHorizontalInput() * speed,ForceMode2D.Force);
+        rb.AddForce(GetHorizontalInput() * speed * Time.deltaTime,ForceMode2D.Force);
     }
     private void Jump()
     {

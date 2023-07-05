@@ -2,12 +2,15 @@ using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CollectibleUIComponent : MonoBehaviour
 {
     public static CollectibleUIComponent instance;
     private TextMeshProUGUI textMeshPro;
-    public int coinsCollected=0;
+    public static int coinsCollected=0;
+    public UnityEvent<int> onCoinCollected;
+
     public static CollectibleUIComponent GetInstance()
     {      
         return instance;
@@ -26,6 +29,8 @@ public class CollectibleUIComponent : MonoBehaviour
     public void UpdateCollectedCoinCount()
     {
         coinsCollected+=1;
+        onCoinCollected?.Invoke(coinsCollected);
+
     }
     public void UpdateCollectedCoinsUI()
     {
