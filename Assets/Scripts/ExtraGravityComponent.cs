@@ -16,7 +16,8 @@ public class ExtraGravityComponent : MonoBehaviour
     {
         if (rb.velocity.y < 0)
         {
-            rb.AddForce(Vector2.down * extraGravity, ForceMode2D.Force);
+            rb.AddForce(Vector2.down * extraGravity * Time.deltaTime, ForceMode2D.Force);
+            Debug.Log("applying extra gravity");
         }
     }
 

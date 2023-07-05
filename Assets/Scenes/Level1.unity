@@ -2165,7 +2165,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8b130c5702cb50a4f9ad3db9a5ecf38e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7061,7 +7061,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  disableObject: {fileID: 0}
+  disableObjectList: []
 --- !u!4 &1060027214
 Transform:
   m_ObjectHideFlags: 0
@@ -8373,7 +8373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e928c2d6f00cf047b7a52396bcf128d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extraGravity: 2
+  extraGravity: 750
 --- !u!1001 &1974445316
 PrefabInstance:
   m_ObjectHideFlags: 0

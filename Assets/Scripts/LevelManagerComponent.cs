@@ -9,7 +9,7 @@ public class LevelManagerComponent : MonoBehaviour
     public int coinsToCompleteTheLevel;
     public string levelName;
     public UnityEvent onLevelCompleted;
-    public DestroyObject disableObject;
+    public DestroyObject[] disableObjectList;
 
     // Update is called once per frame
     private void Start()
@@ -18,10 +18,6 @@ public class LevelManagerComponent : MonoBehaviour
         onLevelCompleted.AddListener(DisplayCompleteTimeUI);
         CollectibleUIComponent.instance.onCoinCollected.AddListener(OnCoinCollected);
     }
-    void LoadNextScene()
-    {
-        //load next scene
-    }
     void OnCoinCollected(int totalCoinsCollected)
     {
         if (totalCoinsCollected == coinsToCompleteTheLevel)
@@ -29,10 +25,15 @@ public class LevelManagerComponent : MonoBehaviour
             onLevelCompleted?.Invoke();
             Debug.Log("you have completed the level");
         }
-        if(totalCoinsCollected == disableObject.coinsToDisableObject)
+        foreach(var door in disableObjectList) 
         {
-            disableObject.DisableObjectOnCoinCollected();
+            if (totalCoinsCollected == door.coinsToDisableObject)
+            {
+                door.DisableObjectOnCoinCollected();
+            }
         }
+
+
     }
     void Update()
     {

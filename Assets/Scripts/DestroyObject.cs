@@ -18,6 +18,9 @@ public class DestroyObject : MonoBehaviour
     }
     public void DisableObjectOnCoinCollected()
     {
+      
         gameObject.SetActive(false);
+        
+        
     }
 }
