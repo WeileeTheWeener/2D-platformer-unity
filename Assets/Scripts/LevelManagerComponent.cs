@@ -9,6 +9,7 @@ public class LevelManagerComponent : MonoBehaviour
     public int coinsToCompleteTheLevel;
     public string levelName;
     public UnityEvent onLevelCompleted;
+    public DestroyObject disableObject;
 
     // Update is called once per frame
     private void Start()
@@ -27,6 +28,10 @@ public class LevelManagerComponent : MonoBehaviour
         {
             onLevelCompleted?.Invoke();
             Debug.Log("you have completed the level");
+        }
+        if(totalCoinsCollected == disableObject.coinsToDisableObject)
+        {
+            disableObject.DisableObjectOnCoinCollected();
         }
     }
     void Update()
