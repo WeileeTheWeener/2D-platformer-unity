@@ -26,7 +26,6 @@ public class DoorComponent : MonoBehaviour
     //todo rename later
     public void EndingDoorCanBeOpened()
     {
-  
         canBeOpened = true;
     }
 

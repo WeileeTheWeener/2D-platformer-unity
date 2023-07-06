@@ -32,12 +32,6 @@ public class LevelManagerComponent : MonoBehaviour
                 door.DisableObjectOnCoinCollected();
             }
         }
-
-
-    }
-    void Update()
-    {
-       
     }
     private void DisplayCompleteTimeUI()
     {

@@ -7,8 +7,9 @@ using UnityEngine.Events;
 public class CollectibleUIComponent : MonoBehaviour
 {
     public static CollectibleUIComponent instance;
+    public DeathAreaComponent deathArea;
     private TextMeshProUGUI textMeshPro;
-    public static int coinsCollected=0;
+    public static int coinsCollected;
     public UnityEvent<int> onCoinCollected;
 
     public static CollectibleUIComponent GetInstance()
@@ -25,6 +26,7 @@ public class CollectibleUIComponent : MonoBehaviour
     void Start()
     {
         textMeshPro = gameObject.GetComponent<TextMeshProUGUI>();
+        deathArea.onPlayerDeath.AddListener(ResetCollectedCoinsToZero);
     }
     public void UpdateCollectedCoinCount()
     {
@@ -35,6 +37,10 @@ public class CollectibleUIComponent : MonoBehaviour
     public void UpdateCollectedCoinsUI()
     {
         textMeshPro.text = String.Format("Coins Collected: {0}" ,coinsCollected.ToString());
+    }
+    public void ResetCollectedCoinsToZero()
+    {
+        coinsCollected = 0;
     }
 
 

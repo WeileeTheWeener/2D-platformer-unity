@@ -31,4 +31,12 @@ public class CollectibleComponent : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    public void EnableObject()
+    {
+        if(!gameObject.activeInHierarchy)
+        {
+            gameObject.SetActive(true);
+        }
+        
+    }
 }
