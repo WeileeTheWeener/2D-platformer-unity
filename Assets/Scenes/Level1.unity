@@ -9084,6 +9084,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneChangerPortal
       objectReference: {fileID: 0}
+    - target: {fileID: 5968966435721250033, guid: 1a8acd7ec421cc842882a2b516bc0136, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968966435721250033, guid: 1a8acd7ec421cc842882a2b516bc0136, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968966435721250033, guid: 1a8acd7ec421cc842882a2b516bc0136, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1689668899}
+    - target: {fileID: 5968966435721250033, guid: 1a8acd7ec421cc842882a2b516bc0136, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968966435721250033, guid: 1a8acd7ec421cc842882a2b516bc0136, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetCollectedCoinsToZero
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968966435721250033, guid: 1a8acd7ec421cc842882a2b516bc0136, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CollectibleUIComponent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968966435721250033, guid: 1a8acd7ec421cc842882a2b516bc0136, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8865019352524623798, guid: 1a8acd7ec421cc842882a2b516bc0136, type: 3}
       propertyPath: m_RootOrder
       value: 13
