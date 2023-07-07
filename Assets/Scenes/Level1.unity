@@ -2225,7 +2225,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleComponent: {fileID: 988578500}
-  levelManager: {fileID: 0}
   collectiblePrefab: {fileID: 8219369982467621010, guid: 4e42db2d9a2fd444c94d6489d47f7b95, type: 3}
   positions:
   - {x: -8.4, y: 0.71, z: 0}
@@ -8949,6 +8948,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1371056614402585406, guid: 018a730567bda394c8d2cc069a7f20e9, type: 3}
+      propertyPath: maxJumpCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2869480632849347191, guid: 018a730567bda394c8d2cc069a7f20e9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -8959,11 +8962,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6654631088131765634, guid: 018a730567bda394c8d2cc069a7f20e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 6654631088131765634, guid: 018a730567bda394c8d2cc069a7f20e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7
+      value: 31.2
       objectReference: {fileID: 0}
     - target: {fileID: 6654631088131765634, guid: 018a730567bda394c8d2cc069a7f20e9, type: 3}
       propertyPath: m_LocalPosition.z

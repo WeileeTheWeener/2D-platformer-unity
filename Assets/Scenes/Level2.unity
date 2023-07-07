@@ -5196,7 +5196,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleComponent: {fileID: 988578500}
-  levelManager: {fileID: 0}
   collectiblePrefab: {fileID: 8219369982467621010, guid: 4e42db2d9a2fd444c94d6489d47f7b95, type: 3}
   positions:
   - {x: -15.75, y: 5.84, z: 0}
@@ -12989,6 +12988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 3979281993384092207, guid: 4f878c322efa2cb4aade5d9abfe5b9b8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3234778069098073489, guid: 4f878c322efa2cb4aade5d9abfe5b9b8, type: 3}
     m_RemovedGameObjects: []
@@ -13310,6 +13313,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1371056614402585406, guid: 018a730567bda394c8d2cc069a7f20e9, type: 3}
+      propertyPath: maxJumpCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2869480632849347191, guid: 018a730567bda394c8d2cc069a7f20e9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -15406,8 +15413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8153ecb8ca552844aa480e447d9f98e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene:
-    m_Handle: 0
   onChangeScene:
     m_PersistentCalls:
       m_Calls: []
@@ -17299,6 +17304,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 438484192213798257, guid: efcc150417233b44e9b42eae47b2581b, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1060027213}
     - target: {fileID: 438484192213798257, guid: efcc150417233b44e9b42eae47b2581b, type: 3}
       propertyPath: resetPlayerObject
       value: 

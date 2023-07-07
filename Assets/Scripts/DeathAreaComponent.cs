@@ -5,10 +5,11 @@ using UnityEngine.Events;
 
 public class DeathAreaComponent : MonoBehaviour
 {
-    public CollectibleFactory collectibleFactory;
-    public GameObject resetPlayerPositionObject;
-    public UnityEvent onPlayerDeath;
-    
+    [SerializeField] private CollectibleFactory collectibleFactory;
+    [SerializeField] private LevelManagerComponent levelManager;
+    [SerializeField] private GameObject resetPlayerPositionObject;
+    [SerializeField] private UnityEvent onPlayerDeath;
+
 
     private void Start()
     {
@@ -25,11 +26,12 @@ public class DeathAreaComponent : MonoBehaviour
     }
     private void ResetCoins()
     {
-        foreach (GameObject collectibles in collectibleFactory.collectibleInstances)
+        foreach (GameObject collectibles in collectibleFactory.CollectibleInstances)
         {
             collectibles.GetComponent<CollectibleComponent>().EnableObject();
         }
     }
+
     private void ResetPlayerLocation(Collider2D collision)
     {
         collision.gameObject.transform.position = resetPlayerPositionObject.transform.position;

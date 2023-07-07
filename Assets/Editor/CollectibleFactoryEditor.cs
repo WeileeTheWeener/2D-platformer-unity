@@ -15,7 +15,7 @@ public class CollectibleFactoryEditor : Editor
         if (t == null) return;
 
         Gizmos.color = Color.blue;
-        foreach (Vector2 position in t.positions)
+        foreach (Vector2 position in t.Positions)
         {
             Gizmos.DrawSphere(position, 0.3f);
         }

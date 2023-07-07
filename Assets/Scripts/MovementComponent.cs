@@ -9,7 +9,7 @@ public class MovementComponent : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float jumpForce;
-    [SerializeField] private float jumpCount;
+    [SerializeField] private float maxJumpCount;
     [SerializeField] private float currentJumpCount;
 
     public UnityEvent onCollided;
@@ -36,7 +36,7 @@ public class MovementComponent : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             currentJumpCount--;
-            currentJumpCount = Mathf.Clamp(currentJumpCount, 0, jumpCount);
+            currentJumpCount = Mathf.Clamp(currentJumpCount, 0, maxJumpCount);
         }
     
     }
@@ -50,9 +50,8 @@ public class MovementComponent : MonoBehaviour
     }
     public void ResetJumpCount()
     {
-        currentJumpCount = jumpCount;
+        currentJumpCount = maxJumpCount;
     }
-
     // Update is called once per frame
     void Update()
     {

@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelManagerComponent : MonoBehaviour
 {
-    public int coinsToCompleteTheLevel;
-    public string levelName;
-    public UnityEvent onLevelCompleted;
-    public DestroyObject[] disableObjectList;
+    [SerializeField] private int coinsToCompleteTheLevel;
+    [SerializeField] private string levelName;
+    [SerializeField] private UnityEvent onLevelCompleted;
+    [SerializeField] private CoinCollectDisableObjectComponent[] disableObjectList;
 
     // Update is called once per frame
     private void Start()
@@ -25,12 +25,9 @@ public class LevelManagerComponent : MonoBehaviour
             onLevelCompleted?.Invoke();
             Debug.Log("you have completed the level");
         }
-        foreach(var door in disableObjectList) 
+        foreach(var objectToDisable in disableObjectList) 
         {
-            if (totalCoinsCollected == door.coinsToDisableObject)
-            {
-                door.DisableObjectOnCoinCollected();
-            }
+            objectToDisable.DisableThisObject(totalCoinsCollected);
         }
     }
     private void DisplayCompleteTimeUI()

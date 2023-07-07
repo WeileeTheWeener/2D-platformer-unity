@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChangerComponent : MonoBehaviour
 {
-    public Scene nextScene;
-    public UnityEvent onChangeScene;
+    [SerializeField] private UnityEvent onChangeScene;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,6 +20,15 @@ public class SceneChangerComponent : MonoBehaviour
     private void ChangeToNextScene()
     {
         //todo: do this with dependancy injection
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        if(SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else
+        {
+            Application.Quit();
+        }
+        
+       
     }
 }

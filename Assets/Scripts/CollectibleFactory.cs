@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class CollectibleFactory : MonoBehaviour
 {
-    public ParticleComponent particleComponent;
-    public LevelManagerComponent levelManager;
-    public GameObject collectiblePrefab;
-    public List<Vector3> positions;
-    public List<GameObject> collectibleInstances;
+    //todo : privatea cek
+    [SerializeField] private ParticleComponent particleComponent;
+    [SerializeField] private GameObject collectiblePrefab;
+    [SerializeField] private List<Vector3> positions;
+    [SerializeField] private List<GameObject> collectibleInstances;
+
+    public List<Vector3> Positions { get => positions; set => positions = value; }
+    public List<GameObject> CollectibleInstances { get => collectibleInstances; set => collectibleInstances = value; }
 
     // Start is called before the first frame update
     void Start()
